@@ -20,7 +20,7 @@ export const Card = props => {
             </h4>
             <span
               class={` rounded-full ${
-                type === "Free"
+                type == "Free"
                   ? `text-green-800 bg-green-200`
                   : `text-indigo-800 bg-indigo-200`
               } uppercase px-2 py-1 text-xs font-bold mr-3`}

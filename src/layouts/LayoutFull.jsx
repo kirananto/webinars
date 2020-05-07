@@ -4,7 +4,7 @@ import { Footer, SignupForm } from "../components"
 export const LayoutFull = ({ children }) => {
   return (
     <>
-      <header className="bg-purple-900 pt-40 pb-24">
+      <header className="bg-purple-900 pt-32 pb-2">
         <div className="container text-center">
           <h1 className="text-3xl text-purple-100 font-bold tracking-wider">Webinars</h1>
         </div>

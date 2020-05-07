@@ -6,7 +6,7 @@ import { Layout } from "../layouts/Layout"
 
 export default props => {
   const { data, location } = props
-  const { host, name, type, date, summary, tags, url } = data.item.data
+  const { host, name, type, date, summary, url } = data.item.data
   const navigation = location.state ? location.state.navigation : null
   const { modal } = useModal()
 

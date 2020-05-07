@@ -45,7 +45,6 @@ export default class Index extends React.Component {
           .toLowerCase()
           .includes(this.state.searchValue.toLowerCase())
       ) {
-        console.log("ddd", new Date(item.data.date))
         for (let tagItem of this.state.tags) {
           if (
             tagItem.value === "Free" &&

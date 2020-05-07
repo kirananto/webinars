@@ -7,9 +7,3 @@
 ## Features
 
 - Listing of all webinars
-
-
-## Coming soon
-
-- Filters based on various criterias
-- Various other features & Enhancements

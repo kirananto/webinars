@@ -87,7 +87,7 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <SiteMetadata
-          title="Webinars"
+          title="Webinar Chief"
           description="Webinars hosted online during COVID-19"
         />
         <Search

@@ -1,4 +1,4 @@
-# Webinars Listings
+# Webinars Chief
 
 ## Screenshot
 

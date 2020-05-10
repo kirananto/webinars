@@ -7,3 +7,8 @@
 ## Features
 
 - Listing of all webinars
+
+## Contributors
+
+- Pranav Divakar
+- Kiran Anto

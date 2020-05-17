@@ -21,7 +21,7 @@ export default class Index extends React.Component {
         //   selected: false,
         // },
         {
-          label: "PastEvents",
+          label: "Past",
           value: "past",
           selected: false,
         },

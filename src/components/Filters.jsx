@@ -8,13 +8,12 @@ export class Filters extends Component {
           {this.props.tags.map((item) => {
             return (
               <li class="px-2 py-2">
-                <a
+                <span
                   className={
                     item.selected
-                      ? "inline-block border border-purple-600 rounded py-1 px-3 bg-purple-600 text-white"
-                      : "inline-block border border-purple-100 rounded hover:border-gray-200 text-purple-100 hover:bg-gray-200 hover:text-purple-600 py-1 px-3"
+                      ? "cursor-pointer inline-block border border-purple-600 rounded py-1 px-3 bg-purple-600 text-white"
+                      : "cursor-pointer inline-block border border-purple-100 rounded hover:border-gray-200 text-purple-100 hover:bg-gray-200 hover:text-purple-600 py-1 px-3"
                   }
-                  href="#"
                   onClick={() => {
                     const tags = this.props.tags.map((mapItem) => {
                       if (
@@ -32,7 +31,7 @@ export class Filters extends Component {
                   }}
                 >
                   #{item.label}
-                </a>
+                </span>
               </li>
             )
           })}

@@ -4,7 +4,19 @@ import { Feature, SiteMetadata } from "../components"
 import { useModal } from "../context"
 import { Layout } from "../layouts/Layout"
 import * as dateFns from "date-fns"
-
+/**
+* calculates the duration between two dates.
+* @param {date object} start The start date.
+* @param {date object} finish The finish date.
+* @return {string} a string of the duration with format 'hh:mm'
+*/
+export const durationFn = (diff) => {
+  const diffTime = diff;
+  if (!diffTime) return '00:00'; // divide by 0 protection
+  const minutes = Math.abs(Math.floor(diffTime / 60) % 60).toString();
+  const hours = Math.abs(Math.floor(diffTime / 60 / 60)).toString();
+  return `${hours.length < 2 ? 0 + hours : hours}:${minutes.length < 2 ? 0 + minutes : minutes} Hours`;
+}; 
 export default (props) => {
   const { data, location } = props
   const {
@@ -13,6 +25,7 @@ export default (props) => {
     type,
     timetz,
     date,
+    duration,
     speakers,
     summary,
     url,
@@ -51,7 +64,7 @@ export default (props) => {
                 <Feature label="Pricing" value={type} />
               </div>
               <div>
-                <Feature label="Duration" value={type} />
+                <Feature label="Duration" value={durationFn(duration)} />
               </div>
               <div>
                 <Feature
@@ -82,6 +95,7 @@ export const query = graphql`
         summary
         tags
         url
+        duration
         timetz
         speakers
       }

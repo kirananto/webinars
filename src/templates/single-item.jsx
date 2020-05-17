@@ -3,11 +3,20 @@ import React from "react"
 import { Feature, SiteMetadata } from "../components"
 import { useModal } from "../context"
 import { Layout } from "../layouts/Layout"
-import * as dateFns from 'date-fns'
+import * as dateFns from "date-fns"
 
-export default props => {
+export default (props) => {
   const { data, location } = props
-  const { host, name, type, timetz, date, summary, url } = data.item.data
+  const {
+    host,
+    name,
+    type,
+    timetz,
+    date,
+    speakers,
+    summary,
+    url,
+  } = data.item.data
   const navigation = location.state ? location.state.navigation : null
   const { modal } = useModal()
 
@@ -15,14 +24,22 @@ export default props => {
     <Layout navigation={navigation}>
       <SiteMetadata title={name} description={summary} />
       <article className={modal && "max-h-80vh md:max-h-90vh overflow-auto"}>
-        <div className={modal ? "p-4 lg:p-8" : "container py-8"}>
-          <h1 className="text-2xl lg:text-3xl text-purple-700 font-bold leading-tight">
+        <div className={modal ? "p-8 lg:p-12" : "container py-8"}>
+          <h1 className="text-2xl max-w-2lg lg:text-3xl text-purple-700 font-bold leading-tight">
             {name}
           </h1>
-          <p className="text-base lg:text-lg text-indigo-800 font-medium mb-8 mt-4">
+          <p className="text-base max-w-2lg lg:text-lg text-indigo-800 font-medium mb-8 mt-4">
             {summary}
           </p>
-          <div className="flex flex-wrap pl-4">
+          
+          <h4 className="text-indigo-800 uppercase text-xxs tracking-wide font-medium pb-px">
+                  Speakers
+                </h4>
+                <p className="text-base text-purple-900 mb-5 font-medium word-break">
+                  {speakers}
+                </p>
+
+          <div className="flex flex-wrap pl-0">
             <div className="w-full lg:w-4/5 grid grid-cols-2">
               <div>
                 <Feature label="Host" value={host} />
@@ -37,7 +54,13 @@ export default props => {
                 <Feature label="Duration" value={type} />
               </div>
               <div>
-              <Feature label="Date" value={`${dateFns.format(new Date(date), "yyyy-MM-dd")} ${timetz} `} />
+                <Feature
+                  label="Date"
+                  value={`${dateFns.format(
+                    new Date(date),
+                    "yyyy-MM-dd"
+                  )} ${timetz} `}
+                />
               </div>
             </div>
           </div>
@@ -60,6 +83,7 @@ export const query = graphql`
         tags
         url
         timetz
+        speakers
       }
     }
   }

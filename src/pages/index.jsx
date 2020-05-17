@@ -10,16 +10,16 @@ export default class Index extends React.Component {
     this.state = {
       searchValue: "",
       tags: [
-        {
-          label: "Free",
-          value: "Free",
-          selected: false,
-        },
-        {
-          label: "Paid",
-          value: "paid",
-          selected: false,
-        },
+        // {
+        //   label: "Free",
+        //   value: "Free",
+        //   selected: false,
+        // },
+        // {
+        //   label: "Paid",
+        //   value: "paid",
+        //   selected: false,
+        // },
         {
           label: "PastEvents",
           value: "past",
@@ -31,6 +31,11 @@ export default class Index extends React.Component {
           selected: true,
         },
         {
+          label: "Tomorrow",
+          value: "tomorrow",
+          selected: false,
+        },
+        {
           label: "Future",
           value: "future",
           selected: false,
@@ -39,6 +44,9 @@ export default class Index extends React.Component {
     }
   }
   render() {
+    const today = new Date()
+const tomorrow = new Date(today)
+tomorrow.setDate(tomorrow.getDate() + 1)
     const webinars = this.props.data.items.nodes.filter((item) => {
       if (
         JSON.stringify(item)
@@ -75,6 +83,13 @@ export default class Index extends React.Component {
             tagItem.selected &&
             dateFns.format(new Date(item.data.date), "yyyy-MM-dd") !==
               dateFns.format(new Date(), "yyyy-MM-dd")
+          ) {
+            return false
+          } else if (
+            tagItem.value === "tomorrow" &&
+            tagItem.selected &&
+            dateFns.format(new Date(item.data.date), "yyyy-MM-dd") !==
+              dateFns.format(tomorrow, "yyyy-MM-dd")
           ) {
             return false
           }

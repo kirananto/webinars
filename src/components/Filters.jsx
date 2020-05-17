@@ -18,13 +18,13 @@ export class Filters extends Component {
                   onClick={() => {
                     const tags = this.props.tags.map((mapItem) => {
                       if (
-                        mapItem.value === item.value ||
-                        (mapItem.selected && mapItem.value === "paid" && item.value === "Free") ||
-                        (mapItem.selected && mapItem.value === "Free" && item.value === "paid")
+                        mapItem.value === item.value 
+                        // || (mapItem.selected && mapItem.value === "paid" && item.value === "Free") ||
+                        // (mapItem.selected && mapItem.value === "Free" && item.value === "paid")
                       ) {
                         return { ...mapItem, selected: !mapItem.selected }
                       } else {
-                        return mapItem
+                        return {...mapItem, selected: false}
                       }
                     })
 

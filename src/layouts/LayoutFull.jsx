@@ -6,7 +6,7 @@ export const LayoutFull = ({ children }) => {
     <>
       <header className="bg-purple-900 pt-32 pb-2">
         <div className="container text-center">
-          <h1 className="text-3xl text-purple-100 font-bold tracking-wider cursor-pointer" onClick={() => window.location.reload()}>Webinar Chief</h1>
+          <h1 className="text-3xl text-purple-100 font-bold tracking-wider cursor-pointer" onClick={() => window.location.replace('/')}>Webinar Chief</h1>
         </div>
       </header>
       {children}

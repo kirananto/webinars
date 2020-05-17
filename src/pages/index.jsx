@@ -134,6 +134,8 @@ export const query = graphql`
           name
           slug
           summary
+          url
+          timetz
         }
       }
     }

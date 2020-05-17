@@ -2,9 +2,10 @@ import { Link } from "gatsby-plugin-modal-routing"
 import PropTypes from "prop-types"
 import React from "react"
 import { Feature } from "."
+import * as dateFns from 'date-fns'
 
-export const Card = props => {
-  const { host, name, type, date, navigation, slug, summary } = props
+export const Card = (props) => {
+  const { host, name, type, url,timetz, date, navigation, slug, summary } = props
 
   return (
     <div className="bg-white h-full shadow-lg rounded-md overflow-hidden hover:bg-indigo-100">
@@ -13,8 +14,8 @@ export const Card = props => {
           <h1 className="text-2xl text-purple-700 font-bold leading-snug truncate mb-3">
             {name}
           </h1>
-          <Feature label="Date" value={date} />
-          <div className="mb-5">
+          <Feature label="Date" value={`${dateFns.format(new Date(date), "yyyy-MM-dd")} ${timetz} `} />
+          {/* <div className="mb-5">
             <h4 className="text-indigo-800 uppercase text-xxs tracking-wide font-medium pb-px">
               Cost
             </h4>
@@ -27,11 +28,11 @@ export const Card = props => {
             >
               {type}
             </span>
-          </div>
+          </div> */}
           <h4 className="text-indigo-800 uppercase text-xxs tracking-wide font-medium pb-px">
             Details
           </h4>
-          <p className="text-base text-indigo-900 mb-5 font-medium word-break">
+          <p className="text-base text-purple-900 mb-5 font-medium word-break">
             {summary?.length > 100
               ? `${summary.substring(0, 100)}...`
               : summary}
@@ -39,6 +40,10 @@ export const Card = props => {
           <Feature label="Host" value={host} />
         </div>
       </Link>
+      <a target="__blank" href={url} >
+      <button class="ml-5 btn bg-purple-700  mb-5 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded">
+            Register now !
+          </button></a>
     </div>
   )
 }
@@ -54,6 +59,7 @@ Card.propTypes = {
   }),
   slug: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 Card.defaultProps = {

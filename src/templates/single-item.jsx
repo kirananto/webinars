@@ -3,10 +3,11 @@ import React from "react"
 import { Feature, SiteMetadata } from "../components"
 import { useModal } from "../context"
 import { Layout } from "../layouts/Layout"
+import * as dateFns from 'date-fns'
 
 export default props => {
   const { data, location } = props
-  const { host, name, type, date, summary, url } = data.item.data
+  const { host, name, type, timetz, date, summary, url } = data.item.data
   const navigation = location.state ? location.state.navigation : null
   const { modal } = useModal()
 
@@ -36,7 +37,7 @@ export default props => {
                 <Feature label="Duration" value={type} />
               </div>
               <div>
-                <Feature label="Date" value={date} />
+              <Feature label="Date" value={`${dateFns.format(new Date(date), "yyyy-MM-dd")} ${timetz} `} />
               </div>
             </div>
           </div>
@@ -58,6 +59,7 @@ export const query = graphql`
         summary
         tags
         url
+        timetz
       }
     }
   }

@@ -13,7 +13,7 @@ export default class Index extends React.Component {
         {
           label: "Free",
           value: "Free",
-          selected: true,
+          selected: false,
         },
         {
           label: "Paid",
@@ -28,7 +28,7 @@ export default class Index extends React.Component {
         {
           label: "Today",
           value: "today",
-          selected: false,
+          selected: true,
         },
         {
           label: "Future",
@@ -83,7 +83,10 @@ export default class Index extends React.Component {
       } else {
         return false
       }
+    }).sort((a,b) => {
+      return new Date(b.data.date) -  new Date(a.data.date)
     })
+    console.log('hello')
     return (
       <Layout>
         <SiteMetadata

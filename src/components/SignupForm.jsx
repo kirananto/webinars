@@ -10,7 +10,7 @@ export const SignupForm = () => {
           </h3>
           <p className="text-indigo-800 font-medium text-base lg:text-lg pb-4 lg:pb-0">
             Every 2 weeks we'll send you a list of a popular and new
-            destinations.
+            webinars.
           </p>
         </div>
         <div className="flex w-full md:w-1/2 lg:w-auto">

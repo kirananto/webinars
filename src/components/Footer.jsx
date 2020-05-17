@@ -31,7 +31,7 @@ export const Footer = () => {
     <footer className="bg-white">
       <div className="container pt-12 pb-12 flex flex-wrap text-center lg:flex-row-reverse lg:justify-between lg:items-center">
         <ul className="w-full lg:w-auto">
-          <FooterIconLink
+          {/* <FooterIconLink
             href={links.facebook}
             icon={FaFacebookF}
             label="Facebook"
@@ -50,7 +50,7 @@ export const Footer = () => {
             href={links.contact}
             icon={FaEnvelope}
             label="E-mail"
-          />
+          /> */}
         </ul>
         <div className="w-full lg:w-auto pt-6 lg:pt-0 text-indigo-800 text-sm">
           &copy; 2020 All rights reserved.

@@ -42,7 +42,7 @@ export const Card = (props) => {
       </Link>
       <a style={{ boxShadow: 'none'}} target="__blank" href={url} >
       <button class="ml-5 btn bg-purple-700  mb-5 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded">
-            Register now !
+            Register Now
           </button></a>
     </div>
   )

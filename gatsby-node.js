@@ -1,6 +1,6 @@
 require("dotenv").config()
 const path = require(`path`)
-const { AIRTABLE_TABLE_NAME: tableName } = process.env
+const tableName = "webinars"
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions

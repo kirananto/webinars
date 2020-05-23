@@ -52,11 +52,11 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: process.env.AIRTABLE_API_KEY,
+        apiKey: "keyqeVpmWnBtrt0zZ",
         tables: [
           {
-            baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: process.env.AIRTABLE_TABLE_NAME,
+            baseId: "appjOODx5k9YDok36",
+            tableName: "webinars",
             mapping: { image: "fileNode" },
           },
         ],

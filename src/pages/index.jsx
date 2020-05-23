@@ -106,7 +106,7 @@ tomorrow.setDate(tomorrow.getDate() + 1)
       <Layout>
         <SiteMetadata
           title="Webinar Chief"
-          description="Webinars hosted online during COVID-19"
+          description="The Best Webinars across the World for the Tech Community "
         />
         <Search
           searchValue={this.state.searchValue}
